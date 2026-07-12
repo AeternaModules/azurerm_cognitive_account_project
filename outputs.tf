@@ -1,3 +1,7 @@
+output "cognitive_account_projects_id" {
+  description = "Map of id values across all cognitive_account_projects, keyed the same as var.cognitive_account_projects"
+  value       = { for k, v in azurerm_cognitive_account_project.cognitive_account_projects : k => v.id }
+}
 output "cognitive_account_projects_cognitive_account_id" {
   description = "Map of cognitive_account_id values across all cognitive_account_projects, keyed the same as var.cognitive_account_projects"
   value       = { for k, v in azurerm_cognitive_account_project.cognitive_account_projects : k => v.cognitive_account_id }
